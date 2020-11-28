@@ -103,8 +103,19 @@ def parser(query):
                             query_processed['stop'])
                     elif ('to' in useful):
                         y_start, y_stop = useful.split('to')
-                        query_processed['start'] = dateparser.parse(y_start)
-                        query_processed['stop'] = dateparser.parse(y_stop)
+                        query_processed['start'] = dateparser.parse(
+                            y_start).strftime("%d %B %Y")
+                        query_processed['start'] = query_processed['start'].split(
+                        )
+                        query_processed['start'][1] = query_processed['start'][1][0:3]
+                        query_processed['start'] = ' '.join(
+                            query_processed['start'])
+                        query_processed['stop'] = dateparser.parse(
+                            y_stop).strftime("%d %B %Y")
+                        query_processed['stop'] = query_processed['stop'].split()
+                        query_processed['stop'][1] = query_processed['stop'][1][0:3]
+                        query_processed['stop'] = ' '.join(
+                            query_processed['stop'])
                     else:
                         query_processed['year'] = dateparser.parse(useful)
     url_dict = {}

@@ -3,7 +3,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
+import os
 
 
 def print_name_and_pic(player_id):
