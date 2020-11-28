@@ -72,7 +72,7 @@ def parser(query):
         else:
             continue
         term = data['terms'][pro[0]]
-        print(f"term is {term}, pro[0] is {pro[0]}")
+        # print(f"term is {term}, pro[0] is {pro[0]}")
         if(len(pro) == 1):  # single
             query_processed[term] = data[term][pro[0]]
         elif (term == 'cmd'):
@@ -131,7 +131,9 @@ def parser(query):
             elif(query_processed['format']==3):
                 query_processed['format']=10
             else:
-                pass   
+                pass
+        if('ctry' in query_processed):
+            query_processed['ctry']=data['wctry'][str(query_processed['ctry'])]
     if('format' in query_processed):
         url_dict['class'] = query_processed['format']
     if('host' in query_processed):
