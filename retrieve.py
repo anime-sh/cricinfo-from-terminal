@@ -15,16 +15,17 @@ def print_name_and_pic(player_id):
 
 def get_relevant_stats(query_url):
     page = requests.get(query_url)
-    df_list = pd.read_html(page.text,match='Career averages')
-    if(len(df_list)<=0):
-        print("couldnt retrieve anything")
-    df=df_list[0]
-    df.drop(df.filter(regex="Unnamed"),axis=1, inplace=True)
-    if(len(df.index)>1):
-        print(df.loc[1])
-    else:
-        print(df.loc[0])
-
+    try:
+        df_list = pd.read_html(page.text,match='Career averages')
+        df=df_list[0]
+        df.drop(df.filter(regex="Unnamed"),axis=1, inplace=True)
+        if(len(df.index)>1):
+            print(df.loc[1])
+        else:
+            print(df.loc[0])
+    except ValueError:
+        print("Couldnt find anything")    
+    
 querying_url, player_id = parser(sys.argv[1])
 print(querying_url)
 print_name_and_pic(player_id)
