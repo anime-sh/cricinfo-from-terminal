@@ -22,3 +22,9 @@ A script to retrieve data from Cricinfo Statsguru
         python retrieve.py 'gautam gambhir @ time 1 jan 2006 - 31 dec 2008'
         python retrieve.py 'gautam gambhir @ y 1 jan 2006 to 31 dec 2008'
     ```
+# Cricinfo Live Score Retrieval
+A script to retrieve scoreboards from live cricket matches
+## Running the Script
+1. Pip install the dependicies
+2. Run score_retrieval.py
+3. Enter the match id from the list
