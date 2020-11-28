@@ -75,13 +75,12 @@
     "format": {
         "50ov": 2,
         "tests": 1,
-        "dis": 2,
         "t20is": 3,
         "all": 11,
         "test": 1,
         "odi": 2,
-        "T20I": 3,
-        "T20": 3
+        "t20i": 3,
+        "t20": 3
     },
     "terms":{        
         "all": "format",

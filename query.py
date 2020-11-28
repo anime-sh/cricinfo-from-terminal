@@ -72,6 +72,7 @@ def parser(query):
         else:
             continue
         term = data['terms'][pro[0]]
+        print(f"term is {term}, pro[0] is {pro[0]}")
         if(len(pro) == 1):  # single
             query_processed[term] = data[term][pro[0]]
         elif (term == 'cmd'):
